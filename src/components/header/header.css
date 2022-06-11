@@ -3,20 +3,52 @@
     color: #fff;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .headerContainer {
     width:  100%;
+    max-width: 1024px;
     margin: 20px 0px 100px 0px;
 }
 
 .headerList {
     display: flex;
     gap: 40px;
+    margin-bottom: 50px;
 }
 
 .headerListItem {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.headerDesc {
+    margin: 20px 0px;
+}
+
+.headerBtn {
+    background-color: #0071c2;
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+.headerSearch {
+    height: 30px;
+    background-color: #fff;
+    border: 3px solid #febb02;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 0px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -2px;
+}
+
+.headerIcon {
+    color: lightgray;
 }
