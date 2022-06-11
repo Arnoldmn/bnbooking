@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 
-export class Hotel extends Component {
-  render() {
+const Hotel = () => {
     return (
       <div>Hotel</div>
     )
-  }
+  
 }
 
 export default Hotel
