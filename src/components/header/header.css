@@ -11,7 +11,7 @@
     max-width: 1024px;
     margin: 20px 0px 100px 0px;
   }
-  
+
   .headerContainer.listMode {
     margin: 20px 0px 0px 0px;
   }
@@ -120,4 +120,8 @@
       color: #0071c2;
       cursor: pointer;
       background-color: #fff;
+  }
+
+  .optionCounterButton:disabled {
+      cursor: not-allowed;
   }
