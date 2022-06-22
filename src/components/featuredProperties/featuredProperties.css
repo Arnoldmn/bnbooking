@@ -38,3 +38,7 @@
     margin-right: 10px;
     color: #fff;
 }
+
+.fpRating > span{
+    font-size: 14px;
+}
