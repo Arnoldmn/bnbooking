@@ -1,6 +1,6 @@
-import { Express } from "express";
+import express  from "express"
 
-const app = Express();
+const app = express();
 
 app.listen(8800, () => {
 
