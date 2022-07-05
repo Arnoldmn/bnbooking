@@ -1,9 +1,10 @@
 import express from 'express'
 import Hotel from '../models/Hotel.js'
+import { createError } from '../utils/errorHandler.js';
 
 const router = express.Router();
 
-router.post('/', async (req, res, next) => {
+router.post('/', async (req, res) => {
     const newHotel = new Hotel(req.body)
 
     try {
@@ -11,7 +12,7 @@ router.post('/', async (req, res, next) => {
         res.status(200).json(savedHotel)
 
     } catch (err) {
-        next(err)
+        res.status(500).json(err)
     }
 
 });
@@ -50,12 +51,12 @@ router.get('/:id', async (req, res) => {
         res.status(500).json(err)
     }
 })
-router.get('/', async (req, res) => {
-    try {
+router.get('/', async (req, res, next) => {
+       try {
         const hotels = await Hotel.find()
         res.status(200).json(hotels)
     } catch (err) {
-        res.status(500).json(err);
+        next(err)
     }
 })
 
