@@ -3,7 +3,7 @@ import Hotel from '../models/Hotel.js'
 
 const router = express.Router();
 
-router.post('/', async (req, res) => {
+router.post('/', async (req, res, next) => {
     const newHotel = new Hotel(req.body)
 
     try {
@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
         res.status(200).json(savedHotel)
 
     } catch (err) {
-        res.status(500).json(err)
+        next(err)
     }
 
 });

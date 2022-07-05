@@ -24,6 +24,17 @@ mongoose.connection.on("disconnected", () => {
     console.log("mongoDB disconnected!");
 });
 
+app.use((err, req, res, next) => {
+    const errorStatus = err.status || 500
+    const errorMessage = err.message || "Somrthing went wrong!"
+    return res.status(errorMessage).json({
+        success: false,
+        status: errorStatus,
+        message: errorMessage,
+        stack: err.stack
+    })
+});
+
 app.use(express.json())
 app.use('/api/auth', authRoute);
 app.use('/api/users', usersRoute);
